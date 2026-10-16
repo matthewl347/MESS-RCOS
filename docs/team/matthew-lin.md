@@ -11,7 +11,7 @@
 
 ## 1. Team and Role
 
-**Team:*Team 4*
+**Team: *Team 4*
 
 **What my team is responsible for:**
 *The main part of MESS that my team is responsible for is the BME280 and BH1750. The main milestone items that this covers is to read/confirm data from each sensor individually using ESP32*
@@ -25,9 +25,6 @@
 ---
 
 ## 2. How My Part Fits the System
-*Commit 2 — `docs: describe how <area> fits the system (<name>)`*
-
-*Explain where your piece sits in the data flow below. What does it receive, what does it produce, and who uses its output?*
 
 ```text
 Sensors (BME280, SGP30, BH1750)
@@ -39,13 +36,13 @@ Sensors (BME280, SGP30, BH1750)
    → laptop / server / UI
 ```
 
-**My part receives:**
+**My part receives:*mess_broadcast*
 
-**My part produces:**
+**My part produces:*mess_hotspot*
 
-**Who depends on my part:**
+**Who depends on my part:*The person reading reading the data to make inferences on the data*
 
-**Key files / folders:**
+**Key files / folders:*N/A, work has not yet begun*
 - `path/to/file` — what it does
 
 ---
