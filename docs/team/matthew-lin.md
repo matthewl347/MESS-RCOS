@@ -48,7 +48,6 @@ Sensors (BME280, SGP30, BH1750)
 ---
 
 ## 3. Current State and Gaps
-*Commit 3 — `docs: add current state and gaps for <area> (<name>)`*
 
 **What works today:**
 *Things you have actually run or tested. Say how you tested them.*
@@ -68,25 +67,29 @@ Sensors (BME280, SGP30, BH1750)
 ---
 
 ## 4. Plan Through Milestone 3
-*Commit 4 — `docs: add milestone plan for <area> (<name>)`*
 
 ### Milestone 2 (end of October): data application and meshing
+
 | Task | Owner | Estimate | Done? |
-|---|---|---|---|
-| | | | ☐ |
-| | | | ☐ |
-| | | | ☐ |
+|---|---|---:|---|
+| Integrate sensor readings into `main/app_main.c` and confirm each sensor is read once per second | Me | 2–3 hours | ☐ |
+| Verify readings are passed into `mess_broadcast` and sent correctly over ESP-NOW | Me | 2 hours | ☐ |
+| Test that `mess_mesh` correctly deduplicates readings, updates the newest-reading cache, and relays packets between boards | Me / Mesh Team | 3–4 hours | ☐ |
 
 ### Milestone 3 (before Thanksgiving): testing gauntlet
-*How will you try to break your part? (long runtime, distance, many nodes, a node dropping out, bad sensor wiring, etc.)*
+
+*How will you try to break your part? Test long runtimes, longer distances, multiple nodes, dropped nodes, and bad sensor inputs.*
 
 | Test | How to run it | What "pass" looks like |
 |---|---|---|
-| | | |
-| | | |
+| Long runtime test | Run the system continuously for several hours while sensors send readings once per second | No crashes, memory issues, or stopped transmissions; readings continue updating normally |
+| Multi-node relay test | Set up at least three boards in an A–B–C layout so A cannot directly reach C and must relay through B | Readings from A successfully reach C through B without duplicate packets |
+| Node dropout test | Run several connected boards, then power off one relay node during operation | Remaining nodes continue operating and the mesh recovers or reroutes without crashing |
+| Distance test | Gradually increase the distance between boards while sending readings | Packets continue to relay reliably within the expected operating range |
+| Bad sensor / disconnect test | Disconnect or miswire a sensor while the firmware is running | System handles the failed sensor without crashing and other sensors or mesh functions continue working |
 
 ### Stretch goal I'd like to take on
-*Pick one from the milestones doc or propose your own. One or two sentences on why and how.*
+*One goal I want to try and run is the letting our sensors run for an extended period of time because that way the sensor can get more reliable data. This will likely be done by programming the sensors to be more resilient.*
 
 ---
 
