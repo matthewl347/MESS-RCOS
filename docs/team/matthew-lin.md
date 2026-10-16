@@ -53,17 +53,17 @@ Sensors (BME280, SGP30, BH1750)
 **What works today:**
 *Things you have actually run or tested. Say how you tested them.*
 
--
+- Sensor reading is functional. I tested it by plugging the BME280 and BH1750 to the ESP 32, afterwards, we were able to test it by running Arduino on it and get readable measurements of our environment.
 
 **What is a stub, placeholder or unfinished:**
 *e.g. "bh1750.c still returns the placeholder `BH1750`; the working code is only in firmwareBH1750."*
 
--
+- The current placeholder that we have is how the data from the BME280 and BH1750 is being sent and rendered by our group. We did not store the working code anywhere right now.
 
 **What is broken or untested:**
 *e.g. "Relay through a middle board (A–B–C test) has not been run on real hardware."*
 
--
+- The relay of data from one laptop to another is currently still untested, however, it is necessary in order to be able to remotely collect data
 
 ---
 
