@@ -50,17 +50,16 @@ Sensors (BME280, SGP30, BH1750)
 ## 3. Current State and Gaps
 
 **What works today:**
-*Things you have actually run or tested. Say how you tested them.*
 
 - Sensor reading is functional. I tested it by plugging the BME280 and BH1750 to the ESP 32, afterwards, we were able to test it by running Arduino on it and get readable measurements of our environment.
 
 **What is a stub, placeholder or unfinished:**
-*e.g. "bh1750.c still returns the placeholder `BH1750`; the working code is only in firmwareBH1750."*
+
 
 - The current placeholder that we have is how the data from the BME280 and BH1750 is being sent and rendered by our group. We did not store the working code anywhere right now.
 
 **What is broken or untested:**
-*e.g. "Relay through a middle board (A–B–C test) has not been run on real hardware."*
+
 
 - The relay of data from one laptop to another is currently still untested, however, it is necessary in order to be able to remotely collect data
 
@@ -78,7 +77,6 @@ Sensors (BME280, SGP30, BH1750)
 
 ### Milestone 3 (before Thanksgiving): testing gauntlet
 
-*How will you try to break your part? Test long runtimes, longer distances, multiple nodes, dropped nodes, and bad sensor inputs.*
 
 | Test | How to run it | What "pass" looks like |
 |---|---|---|
@@ -94,22 +92,19 @@ Sensors (BME280, SGP30, BH1750)
 ---
 
 ## 5. Risks, Dependencies and Questions
-*Commit 5 — `docs: add risks and open questions for <area> (<name>)`*
 
 **I'm waiting on / depend on:**
-*Who or what is blocking you? e.g. "UI needs numeric readings from the sensor team before graphs show real data."*
 
--
+- I'm waiting and depending on the setting up of the sensors to be fully finished before I continue my work.
 
 **Risks (what could go wrong in my area):**
-*e.g. I2C bus conflicts between sensors, hotspot and mesh sharing channel 1, cache filling up with many nodes.*
 
--
+- A risk that I can see happening is a cache filling up too many nodes.
 
 **Open questions for leads / other teams:**
 
--
+- Will there be instructions on how to reliably extract the data and read it somewhere?
 
 **Things I want to learn on this project:**
 
--
+- I want to learn how to transfer data between devices, learn a bit of R so I can format the data, and learn how to build a GUI that uses the R processed data.
